@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact - Baselian Grip Battle</title>
+<style>
+  html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial Black', Arial, sans-serif;
+    background-color: black;
+    color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 5px black;
+  }
+
+  p {
+    font-size: 1.3rem;
+    font-weight: 900;
+    max-width: 600px;
+    letter-spacing: 1.5px;
+    margin-bottom: 50px;
+    text-shadow: 1px 1px 3px black;
+  }
+
+  button {
+    background-color: red;
+    border: none;
+    border-radius: 30px;
+    padding: 15px 60px;
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: black;
+    box-shadow: 2px 2px 7px #9a0000;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: darkred;
+    color: white;
+  }
+
+  @media (max-width: 420px) {
+    h1 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1rem;
+      margin: 0 20px 40px 20px;
+    }
+    button {
+      font-size: 1.2rem;
+      padding: 12px 40px;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <h1>THE BASELIAN GRIP BATTLE</h1>
+
+  <p>
+    Email: baselian@example.com<br />
+    Phone: +1234567890<br />
+    Address: Baselian Battle Arena, Cityname<br />
+  </p>
+
+  <button onclick="window.location.href='index.html'">Back to Home</button>
+
+</body>
+</html>
