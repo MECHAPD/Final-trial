@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Baselian Grip Battle</title>
+<style>
+  html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial Black', Arial, sans-serif;
+    background: url('background.png') no-repeat center center fixed;
+    background-size: cover;
+    color: red;
+  }
+
+  body {
+    position: relative;
+  }
+
+  .buttons {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    z-index: 1000;
+  }
+
+  button {
+    cursor: pointer;
+    border: none;
+    border-radius: 30px;
+    font-weight: 900;
+    color: black;
+    text-transform: uppercase;
+    box-shadow: 2px 2px 7px #9a0000;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+    font-size: 1.3rem;
+    width: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  button:hover {
+    background-color: darkred;
+    color: white;
+  }
+
+  .registerBtn {
+    background-color: red;
+    padding-left: 50px; /* Slight right shift */
+  }
+
+  .rulesBtn, .contactBtn {
+    background-color: rgba(255, 0, 0, 0.85);
+    padding-left: 0;
+  }
+
+  @media (max-width: 420px) {
+    button {
+      padding: 14px 50px;
+      font-size: 1.1rem;
+      width: 220px;
+    }
+    .registerBtn {
+      padding-left: 40px;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <div class="buttons" id="mainButtons">
+    <button class="registerBtn" onclick="window.open('https://forms.gle/2zHHp77Bo7v7zJSi7', '_blank')">REGISTER NOW</button>
+    <button class="rulesBtn" onclick="window.location.href='rules.html'">RULES</button>
+    <button class="contactBtn" onclick="window.location.href='contact.html'">CONTACT</button>
+  </div>
+
+</body>
+</html>
