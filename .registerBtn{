@@ -1,0 +1,19 @@
+.registerBtn {
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 40px;
+  font-weight: 900;
+  color: black;
+  text-transform: uppercase;
+  box-shadow: 2px 2px 7px #9a0000;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+  cursor: pointer;
+  border: none;
+  border-radius: 30px;
+  padding: 15px 80px;  /* you can keep or tweak this */
+  font-size: 1.3rem;
+  width: 280px;
+}
