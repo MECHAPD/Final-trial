@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Baselian Grip Battle</title>
+<style>
+  html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial Black', Arial, sans-serif;
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: red;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    position: relative;
+  }
+
+  /* Sections fill viewport height */
+  section {
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Content text style for rules and contact sections */
+  #rulesContent, #contactContent {
+    max-width: 600px;
+    font-size: 1.3rem;
+    font-weight: 900;
+    letter-spacing: 1.3px;
+    text-shadow: 1px 1px 2px black;
+    color: red;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  /* Buttons container fixed at bottom center with vertical layout */
+  .buttons {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    z-index: 1000;
+  }
+
+  button {
+    cursor: pointer;
+    border: none;
+    border-radius: 30px;
+    padding: 15px 80px;
+    font-weight: 900;
+    color: black;
+    text-transform: uppercase;
+    box-shadow: 2px 2px 7px #9a0000;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+    font-size: 1.3rem;
+    width: 280px;
+  }
+
+  button:hover {
+    background-color: darkred;
+    color: white;
+  }
+
+  .registerBtn {
+    background-color: red;
+  }
+
+  .rulesBtn, .contactBtn {
+    background-color: rgba(255, 0, 0, 0.85);
+  }
+
+  .backBtn {
+    background-color: red;
+    font-size: 1.3rem;
+    width: 280px;
+    display: none;
+  }
+
+  /* Responsive tweaks */
+  @media (max-width: 420px) {
+    button {
+      padding: 14px 50px;
+      font-size: 1.1rem;
+      width: 220px;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <section id="home"></section>
+
+  <section id="rules">
+    <div id="rulesContent">
+      <h2>Rules</h2>
+      <p>
+        1. Only registered players allowed.<br/>
+        2. Follow fair play.<br/>
+        3. Matches are timed.<br/>
+        4. Disputes handled by referees.<br/>
+      </p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div id="contactContent">
+      <h2>Contact Info</h2>
+      <p>
+        Email: baselian@example.com<br/>
+        Phone: +1234567890<br/>
+        Address: Baselian Battle Arena, Cityname<br/>
+      </p>
+    </div>
+  </section>
+
+  <div class="buttons" id="mainButtons">
+    <button class="registerBtn" onclick="window.open('https://forms.gle/2zHHp77Bo7v7zJSi7', '_blank')">REGISTER NOW</button>
+    <button class="rulesBtn" onclick="scrollToSection('rules')">RULES</button>
+    <button class="contactBtn" onclick="scrollToSection('contact')">CONTACT</button>
+  </div>
+
+  <div class="buttons" id="backButtonDiv">
+    <button class="backBtn" id="backBtn">BACK TO HOME</button>
+  </div>
+
+<script>
+  const mainButtons = document.getElementById('mainButtons');
+  const backButtonDiv = document.getElementById('backButtonDiv');
+  const backBtn = document.getElementById('backBtn');
+
+  backBtn.addEventListener('click', () => {
+    scrollToSection('home');
+  });
+
+  function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({behavior:'smooth'});
+  }
+
+  function checkScroll() {
+    const scrollY = window.scrollY || window.pageYOffset;
+    const rulesTop = document.getElementById('rules').offsetTop;
+    const contactTop = document.getElementById('contact').offsetTop;
+
+    if (scrollY + window.innerHeight/2 >= rulesTop && scrollY + window.innerHeight/2 < contactTop) {
+      mainButtons.style.display = 'none';
+      backButtonDiv.style.display = 'flex';
+      backBtn.style.display = 'inline-block';
+    } else if (scrollY + window.innerHeight/2 >= contactTop) {
+      mainButtons.style.display = 'none';
+      backButtonDiv.style.display = 'flex';
+      backBtn.style.display = 'inline-block';
+    } else {
+      mainButtons.style.display = 'flex';
+      backButtonDiv.style.display = 'none';
+      backBtn.style.display = 'none';
+    }
+  }
+
+  checkScroll();
+  window.addEventListener('scroll', checkScroll);
+</script>
+
+</body>
+</html>
