@@ -5,25 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Baselian Grip Battle</title>
 <style>
-  html, body {
-    height: 100%;
-    margin: 0;
-    font-family: 'Arial Black', Arial, sans-serif;
-    background-image: url('background.png');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: red;
-    background-position: center center;
-    background-size: cover;
-    position: relative;
-  }
+ html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Arial Black', Arial, sans-serif;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  color: red;
+  position: relative;
+}
 
-  @media (min-width: 992px) {
-    html, body {
-      background-position: right center;
-      background-size: auto 100%;
-    }
+/* Mobile background */
+@media (max-width: 991px) {
+  html, body {
+    background-image: url('mobile-background.png');
   }
+}
+
+/* Desktop background */
+@media (min-width: 992px) {
+  html, body {
+    background-image: url('desktop-background.png');
+    background-position: right center; /* Shift the desktop image if needed */
+    background-size: auto 100%;
+  }
+}
+
 
   .buttons {
     position: fixed;
